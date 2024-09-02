@@ -3,6 +3,8 @@ import { reverseString, reverseStringNoMethods } from "./1-reverseString";
 import { sumDigits } from "./1.1-sumDigits";
 import { createDictionary } from "./2.1-createDictionary";
 import { isPalindrome } from "./3-isPalindrome";
+import { moveZeroes } from "./3.1-moveZeroes";
+import exp from "constants";
 
 describe.skip("reverseString", () => {
   test("test => tset", () => {
@@ -50,7 +52,7 @@ describe.skip("createDictionary", () => {
     };
 });
 
-describe("isPalindrome", () => {
+describe.skip("isPalindrome", () => {
   test("apple => false", () => {
     expect(isPalindrome("apple")).toBe(false);
   });
@@ -63,5 +65,17 @@ describe("isPalindrome", () => {
   });
   test("R acE Car => true", () => {
     expect(isPalindrome("R acE Car.")).toBe(true);
+  });
+});
+
+describe("moveZeroes", () => {
+  test("[1, 0, 2, 0, 3] => [1, 0, 2, 0, 3]", () => {
+    expect(moveZeroes([1, 0, 2, 0, 3])).toEqual([1, 2, 3, 0, 0]);
+  });
+  test("[5, 0, 4, 3, 0, 0, 0, 3, 2, 1] => [5, 4, 3, 3, 2, 1, 0, 0, 0, 0]", () => {
+    expect(moveZeroes([5, 0, 4, 3, 0, 0, 0, 3, 2, 1])).toEqual([5, 4, 3, 3, 2, 1, 0, 0, 0, 0]);
+  });
+  test("[4, 0, 3, 0, 2, 3, 4, 0] => [4, 3, 2, 3, 4, 0, 0, 0]", () => {
+    expect(moveZeroes([4, 0, 3, 0, 2, 3, 4, 0])).toEqual([4, 3, 2, 3, 4, 0, 0, 0]);
   });
 });
