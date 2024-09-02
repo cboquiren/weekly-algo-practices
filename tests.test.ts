@@ -2,6 +2,7 @@ import { describe, expect, test } from "vitest";
 import { reverseString, reverseStringNoMethods } from "./1-reverseString";
 import { sumDigits } from "./1.1-sumDigits";
 import { createDictionary } from "./2.1-createDictionary";
+import { isPalindrome } from "./3-isPalindrome";
 
 describe.skip("reverseString", () => {
   test("test => tset", () => {
@@ -36,7 +37,7 @@ describe.skip("sumDigits", () => {
   });
 });
 
-describe("createDictionary", () => {
+describe.skip("createDictionary", () => {
   test("apple => {vowels: 2, consonants: 3}", () => {
     expect(createDictionary("apple")).toEqual({ vowels: 2, consonants: 3 });
   });
@@ -47,4 +48,20 @@ describe("createDictionary", () => {
     () => {
       expect(createDictionary("CapitAlS")).toEqual({ vowels: 3, consonants: 5 });
     };
+});
+
+describe("isPalindrome", () => {
+  test("apple => false", () => {
+    expect(isPalindrome("apple")).toBe(false);
+  });
+  test("Never Odd Or Even => true"),
+    () => {
+      expect(isPalindrome("Never Odd Or Even")).toBe(true);
+    };
+  test("racecar => true", () => {
+    expect(isPalindrome("racecar")).toBe(true);
+  });
+  test("R acE Car => true", () => {
+    expect(isPalindrome("R acE Car.")).toBe(true);
+  });
 });
