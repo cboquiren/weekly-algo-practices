@@ -5,6 +5,8 @@ import { createDictionary } from "./2.1-createDictionary";
 import { isPalindrome } from "./3-isPalindrome";
 import { moveZeroes } from "./3.1-moveZeroes";
 import exp from "constants";
+import { maxValue } from "./4-maxValue";
+import { repeatingChars } from "./4.1-repeatingChars";
 
 describe.skip("reverseString", () => {
   test("test => tset", () => {
@@ -68,7 +70,7 @@ describe.skip("isPalindrome", () => {
   });
 });
 
-describe("moveZeroes", () => {
+describe.skip("moveZeroes", () => {
   test("[1, 0, 2, 0, 3] => [1, 0, 2, 0, 3]", () => {
     expect(moveZeroes([1, 0, 2, 0, 3])).toEqual([1, 2, 3, 0, 0]);
   });
@@ -77,5 +79,29 @@ describe("moveZeroes", () => {
   });
   test("[4, 0, 3, 0, 2, 3, 4, 0] => [4, 3, 2, 3, 4, 0, 0, 0]", () => {
     expect(moveZeroes([4, 0, 3, 0, 2, 3, 4, 0])).toEqual([4, 3, 2, 3, 4, 0, 0, 0]);
+  });
+});
+
+describe("maxValue", () => {
+  test("[1, 2, 3, 4] => 4", () => {
+    expect(maxValue([1, 2, 3, 4])).toEqual({ max: 4, index: 3 });
+  });
+  test("[5, 3, 2, 6, 7, 2, 1, 0] => 7", () => {
+    expect(maxValue([5, 3, 2, 6, 7, 2, 1, 0])).toEqual({ max: 7, index: 4 });
+  });
+  test("[93, 23, 4, 2, 0, 90]", () => {
+    expect(maxValue([93, 23, 4, 2, 0, 90])).toEqual({ max: 93, index: 0 });
+  });
+});
+
+describe("repeatingChars", () => {
+  test("swiss => w", () => {
+    expect(repeatingChars("swiss")).toBe("w");
+  });
+  test("sss => null", () => {
+    expect(repeatingChars("sss")).toBe(null);
+  });
+  test("apple => a", () => {
+    expect(repeatingChars("apple")).toBe("a");
   });
 });
