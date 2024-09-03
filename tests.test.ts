@@ -7,6 +7,8 @@ import { moveZeroes } from "./3.1-moveZeroes";
 import exp from "constants";
 import { maxValue } from "./4-maxValue";
 import { repeatingChars } from "./4.1-repeatingChars";
+import { sumEvens, sumEvensAndOdds } from "./5-sumEvens";
+import { mergeArrays } from "./5.1-mergeArrays";
 
 describe.skip("reverseString", () => {
   test("test => tset", () => {
@@ -82,7 +84,7 @@ describe.skip("moveZeroes", () => {
   });
 });
 
-describe("maxValue", () => {
+describe.skip("maxValue", () => {
   test("[1, 2, 3, 4] => 4", () => {
     expect(maxValue([1, 2, 3, 4])).toEqual({ max: 4, index: 3 });
   });
@@ -94,7 +96,7 @@ describe("maxValue", () => {
   });
 });
 
-describe("repeatingChars", () => {
+describe.skip("repeatingChars", () => {
   test("swiss => w", () => {
     expect(repeatingChars("swiss")).toBe("w");
   });
@@ -103,5 +105,41 @@ describe("repeatingChars", () => {
   });
   test("apple => a", () => {
     expect(repeatingChars("apple")).toBe("a");
+  });
+});
+
+describe("sumEvens", () => {
+  test("[1, 2, 3, 4, 5, 6] => 12", () => {
+    expect(sumEvens([1, 2, 3, 4, 5, 6])).toBe(12);
+  });
+  test("[1, 3, 5, 7] => 0", () => {
+    expect(sumEvens([1, 3, 5, 7])).toBe(0);
+  });
+  test("[2, 2, 2, 2, 2] => 10", () => {
+    expect(sumEvens([2, 2, 2, 2, 2])).toBe(10);
+  });
+});
+
+describe("sumEvensAndOdds", () => {
+  test("[1, 2, 3, 4, 5, 6] => 12", () => {
+    expect(sumEvensAndOdds([1, 2, 3, 4, 5, 6])).toEqual({ odds: 9, evens: 12 });
+  });
+  test("[1, 3, 5, 7] => 0", () => {
+    expect(sumEvensAndOdds([1, 3, 5, 7])).toEqual({ odds: 16, evens: 0 });
+  });
+  test("[2, 2, 2, 2, 2] => 10", () => {
+    expect(sumEvensAndOdds([2, 2, 2, 2, 2])).toEqual({ odds: 0, evens: 10 });
+  });
+});
+
+describe("mergeArrays", () => {
+  test("[1, 3, 5], [2, 4, 6] => [1, 2, 3, 4, 5, 6]", () => {
+    expect(mergeArrays([1, 3, 5], [2, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+  test("[2, 3, 5], [1, 4, 6] => [1, 2, 3, 4, 5, 6]", () => {
+    expect(mergeArrays([2, 3, 5], [1, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+  test("[1, 2, 3], [4, 5, 6] => [1, 2, 3, 4, 5, 6]", () => {
+    expect(mergeArrays([1, 2, 3], [4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6]);
   });
 });
