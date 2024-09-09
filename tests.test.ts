@@ -4,11 +4,27 @@ import { sumDigits } from "./1.1-sumDigits";
 import { createDictionary } from "./2.1-createDictionary";
 import { isPalindrome } from "./3-isPalindrome";
 import { moveZeroes } from "./3.1-moveZeroes";
-import exp from "constants";
 import { maxValue } from "./4-maxValue";
 import { repeatingChars } from "./4.1-repeatingChars";
 import { sumEvens, sumEvensAndOdds } from "./5-sumEvens";
 import { mergeArrays } from "./5.1-mergeArrays";
+import { romanNumeralGenerator } from "./prentusProblems";
+import exp from "constants";
+import { countVowels, countVowelsExtended } from "./6-countVowels";
+
+describe.skip("Prentus Problems", () => {
+  describe("Roman Numeral Generator", () => {
+    test("3749 => MMMDCCXLIX", () => {
+      expect(romanNumeralGenerator(3749)).toBe("MMMDCCXLIX");
+    });
+    test("58 => LVIII", () => {
+      expect(romanNumeralGenerator(58)).toBe("LVIII");
+    });
+    test("1994 => MCMXCIV", () => {
+      expect(romanNumeralGenerator(1994)).toBe("MCMXCIV");
+    });
+  });
+});
 
 describe.skip("reverseString", () => {
   test("test => tset", () => {
@@ -108,7 +124,7 @@ describe.skip("repeatingChars", () => {
   });
 });
 
-describe("sumEvens", () => {
+describe.skip("sumEvens", () => {
   test("[1, 2, 3, 4, 5, 6] => 12", () => {
     expect(sumEvens([1, 2, 3, 4, 5, 6])).toBe(12);
   });
@@ -120,7 +136,7 @@ describe("sumEvens", () => {
   });
 });
 
-describe("sumEvensAndOdds", () => {
+describe.skip("sumEvensAndOdds", () => {
   test("[1, 2, 3, 4, 5, 6] => 12", () => {
     expect(sumEvensAndOdds([1, 2, 3, 4, 5, 6])).toEqual({ odds: 9, evens: 12 });
   });
@@ -132,7 +148,7 @@ describe("sumEvensAndOdds", () => {
   });
 });
 
-describe("mergeArrays", () => {
+describe.skip("mergeArrays", () => {
   test("[1, 3, 5], [2, 4, 6] => [1, 2, 3, 4, 5, 6]", () => {
     expect(mergeArrays([1, 3, 5], [2, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
   });
@@ -141,5 +157,29 @@ describe("mergeArrays", () => {
   });
   test("[1, 2, 3], [4, 5, 6] => [1, 2, 3, 4, 5, 6]", () => {
     expect(mergeArrays([1, 2, 3], [4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+});
+
+describe.skip("countVowels", () => {
+  test("apple => 2", () => {
+    expect(countVowels("apple")).toBe(2);
+  });
+  test("dinOsAur => 4", () => {
+    expect(countVowels("dinOsAur")).toBe(4);
+  });
+  test("brAcElEt => 3", () => {
+    expect(countVowels("brAcElEt")).toBe(3);
+  });
+});
+
+describe("countVowelsExtended", () => {
+  test("apple => {vowels: 2, consonants: 3", () => {
+    expect(countVowelsExtended("apple")).toEqual({ vowels: 2, consonants: 3 });
+  });
+  test("DINOsaur => {vowels: 4, consonants: 4", () => {
+    expect(countVowelsExtended("DINOsaur")).toEqual({ vowels: 4, consonants: 4 });
+  });
+  test("BRACELET => {vowels: 3, consonants: 5", () => {
+    expect(countVowelsExtended("BRACELET")).toEqual({ vowels: 3, consonants: 5 });
   });
 });
