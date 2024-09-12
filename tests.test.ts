@@ -9,10 +9,9 @@ import { repeatingChars } from "./4.1-repeatingChars";
 import { sumEvens, sumEvensAndOdds } from "./5-sumEvens";
 import { mergeArrays } from "./5.1-mergeArrays";
 import { romanNumeralGenerator } from "./prentusProblems";
-import exp from "constants";
 import { countVowels, countVowelsExtended } from "./6-countVowels";
 
-describe.skip("Prentus Problems", () => {
+describe("Prentus Problems", () => {
   describe("Roman Numeral Generator", () => {
     test("3749 => MMMDCCXLIX", () => {
       expect(romanNumeralGenerator(3749)).toBe("MMMDCCXLIX");
@@ -172,7 +171,7 @@ describe.skip("countVowels", () => {
   });
 });
 
-describe("countVowelsExtended", () => {
+describe.skip("countVowelsExtended", () => {
   test("apple => {vowels: 2, consonants: 3", () => {
     expect(countVowelsExtended("apple")).toEqual({ vowels: 2, consonants: 3 });
   });
