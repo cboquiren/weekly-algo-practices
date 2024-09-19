@@ -10,8 +10,11 @@ import { sumEvens, sumEvensAndOdds } from "./5-sumEvens";
 import { mergeArrays } from "./5.1-mergeArrays";
 import { romanNumeralGenerator } from "./prentusProblems";
 import { countVowels, countVowelsExtended } from "./6-countVowels";
+import { mergeSortedLists } from "./7-mergeSortedLists";
+import exp from "constants";
+import { findMissingNum } from "./7.1-findMissingNum";
 
-describe("Prentus Problems", () => {
+describe.skip("Prentus Problems", () => {
   describe("Roman Numeral Generator", () => {
     test("3749 => MMMDCCXLIX", () => {
       expect(romanNumeralGenerator(3749)).toBe("MMMDCCXLIX");
@@ -180,5 +183,26 @@ describe.skip("countVowelsExtended", () => {
   });
   test("BRACELET => {vowels: 3, consonants: 5", () => {
     expect(countVowelsExtended("BRACELET")).toEqual({ vowels: 3, consonants: 5 });
+  });
+});
+
+describe.skip("mergeSortedLists", () => {
+  test("[1, 3, 5], [2, 4, 6] => [1, 2, 3, 4, 5, 6]", () => {
+    expect(mergeSortedLists([1, 3, 5], [2, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+  test("[2, 3, 5], [1, 4, 6] => [1, 2, 3, 4, 5, 6]", () => {
+    expect(mergeSortedLists([2, 3, 5], [1, 4, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+  test("[1, 2, 3], [4, 5, 6] => [1, 2, 3, 4, 5, 6]", () => {
+    expect(mergeSortedLists([1, 2, 3], [4, 5, 6])).toEqual([1, 2, 3, 4, 5, 6]);
+  });
+});
+
+describe("findMissingNum", () => {
+  test("[1, 2, 3, 5, 6, 7] => 4", () => {
+    expect(findMissingNum([1, 2, 3, 5, 6, 7])).toBe(4);
+  });
+  test("[1, 3] => 2", () => {
+    expect(findMissingNum([1, 3])).toBe(2);
   });
 });
