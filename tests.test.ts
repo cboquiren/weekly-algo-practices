@@ -11,7 +11,6 @@ import { mergeArrays } from "./5.1-mergeArrays";
 import { romanNumeralGenerator } from "./prentusProblems";
 import { countVowels, countVowelsExtended } from "./6-countVowels";
 import { mergeSortedLists } from "./7-mergeSortedLists";
-import exp from "constants";
 import { findMissingNum } from "./7.1-findMissingNum";
 
 describe.skip("Prentus Problems", () => {
@@ -204,5 +203,8 @@ describe("findMissingNum", () => {
   });
   test("[1, 3] => 2", () => {
     expect(findMissingNum([1, 3])).toBe(2);
+  });
+  test("[1, 2, 3, 4, 5, 6, 8] => 7", () => {
+    expect(findMissingNum([1, 2, 3, 4, 5, 6, 8])).toBe(7);
   });
 });
