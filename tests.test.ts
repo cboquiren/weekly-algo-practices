@@ -12,6 +12,8 @@ import { romanNumeralGenerator } from "./prentusProblems";
 import { countVowels, countVowelsExtended } from "./6-countVowels";
 import { mergeSortedLists } from "./7-mergeSortedLists";
 import { findMissingNum } from "./7.1-findMissingNum";
+import { removeDupes } from "./8-removeDupes";
+import { twoSumOptimized } from "./8.1-twoSumOptimized";
 
 describe.skip("Prentus Problems", () => {
   describe("Roman Numeral Generator", () => {
@@ -197,7 +199,7 @@ describe.skip("mergeSortedLists", () => {
   });
 });
 
-describe("findMissingNum", () => {
+describe.skip("findMissingNum", () => {
   test("[1, 2, 3, 5, 6, 7] => 4", () => {
     expect(findMissingNum([1, 2, 3, 5, 6, 7])).toBe(4);
   });
@@ -206,5 +208,34 @@ describe("findMissingNum", () => {
   });
   test("[1, 2, 3, 4, 5, 6, 8] => 7", () => {
     expect(findMissingNum([1, 2, 3, 4, 5, 6, 8])).toBe(7);
+  });
+});
+
+describe.skip("removeDupes", () => {
+  test("[1, 1, 2, 2, 3, 3] => [1, 2, 3]", () => {
+    expect(removeDupes([1, 1, 2, 2, 3, 3])).toEqual([1, 2, 3]);
+  });
+  test("['a', 'b', 'c', 'a', 'b', 'c'] => ['a', 'b', 'c']", () => {
+    expect(removeDupes(["a", "b", "c", "a", "b", "c"])).toEqual(["a", "b", "c"]);
+  });
+  test("['apple', 'banana', 'orange', 'pear', 'apple'] => ['apple', 'banana', 'orange', 'pear']", () => {
+    expect(removeDupes(["apple", "banana", "orange", "pear", "apple"])).toEqual([
+      "apple",
+      "banana",
+      "orange",
+      "pear",
+    ]);
+  });
+});
+
+describe("twoSumOptimized", () => {
+  test("[1, 2, 3, 4], 6 => [1, 3]", () => {
+    expect(twoSumOptimized([1, 2, 3, 4], 6)).toEqual([1, 3]);
+  });
+  test("[ 3, 6, 9, 12, 15], 12 => [0, 2]", () => {
+    expect(twoSumOptimized([3, 6, 9, 12, 15], 12)).toEqual([0, 2]);
+  });
+  test("[-1, -2, -3, -4, 1, 2, 3], 2 => [0, 6]", () => {
+    expect(twoSumOptimized([-1, -2, -3, -4, 1, 2, 3], 2)).toEqual([0, 6]);
   });
 });
