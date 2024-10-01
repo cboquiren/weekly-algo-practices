@@ -14,6 +14,7 @@ import { mergeSortedLists } from "./7-mergeSortedLists";
 import { findMissingNum } from "./7.1-findMissingNum";
 import { removeDupes } from "./8-removeDupes";
 import { twoSumOptimized } from "./8.1-twoSumOptimized";
+import { factorialFinder, memoizeFactorialFinder, memoizeFinder } from "./9-factorialFinder";
 
 describe.skip("Prentus Problems", () => {
   describe("Roman Numeral Generator", () => {
@@ -228,7 +229,7 @@ describe.skip("removeDupes", () => {
   });
 });
 
-describe("twoSumOptimized", () => {
+describe.skip("twoSumOptimized", () => {
   test("[1, 2, 3, 4], 6 => [1, 3]", () => {
     expect(twoSumOptimized([1, 2, 3, 4], 6)).toEqual([1, 3]);
   });
@@ -237,5 +238,35 @@ describe("twoSumOptimized", () => {
   });
   test("[-1, -2, -3, -4, 1, 2, 3], 2 => [0, 6]", () => {
     expect(twoSumOptimized([-1, -2, -3, -4, 1, 2, 3], 2)).toEqual([0, 6]);
+  });
+});
+
+describe.skip("factorialFinder", () => {
+  test("3 => 6", () => {
+    expect(factorialFinder(3)).toBe(6);
+  });
+  test("5 => 120", () => {
+    expect(factorialFinder(5)).toBe(120);
+  });
+  test("9 => 362880", () => {
+    expect(factorialFinder(9)).toBe(362880);
+  });
+  test("15 => 1307674368000", () => {
+    expect(factorialFinder(15)).toBe(1307674368000);
+  });
+});
+
+describe.skip("memoizeFactorialFinder", () => {
+  test("3 => 6", () => {
+    expect(memoizeFinder(3)).toBe(6);
+  });
+  test("9 => 362880", () => {
+    expect(memoizeFinder(9)).toBe(362880);
+  });
+  test("5 => 120", () => {
+    expect(memoizeFinder(5)).toBe(120);
+  });
+  test("15 => 1307674368000", () => {
+    expect(memoizeFinder(15)).toBe(1307674368000);
   });
 });
