@@ -15,6 +15,10 @@ import { findMissingNum } from "./7.1-findMissingNum";
 import { removeDupes } from "./8-removeDupes";
 import { twoSumOptimized } from "./8.1-twoSumOptimized";
 import { factorialFinder, memoizeFactorialFinder, memoizeFinder } from "./9-factorialFinder";
+import { longestSubstring } from "./9.1-longestSubstring";
+import exp from "constants";
+import { genFib } from "./10-genFib";
+import { exec } from "child_process";
 
 describe.skip("Prentus Problems", () => {
   describe("Roman Numeral Generator", () => {
@@ -268,5 +272,29 @@ describe.skip("memoizeFactorialFinder", () => {
   });
   test("15 => 1307674368000", () => {
     expect(memoizeFinder(15)).toBe(1307674368000);
+  });
+});
+
+describe.skip("longestSubstring", () => {
+  test("apple => 3", () => {
+    expect(longestSubstring("apple")).toBe(3);
+  });
+  test("wolverine => 8", () => {
+    expect(longestSubstring("wolverine")).toBe(8);
+  });
+  test("devslopes => 7", () => {
+    expect(longestSubstring("devslopes")).toBe(7);
+  });
+});
+
+describe("genFib", () => {
+  test("1 => [1]", () => {
+    expect(genFib(1)).toEqual([1]);
+  });
+  test("3 => [1, 1, 2]", () => {
+    expect(genFib(3)).toEqual([1, 1, 2]);
+  });
+  test("6 => [1, 1, 2, 3, 5, 8]", () => {
+    expect(genFib(6)).toEqual([1, 1, 2, 3, 5, 8]);
   });
 });
