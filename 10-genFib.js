@@ -1,7 +1,7 @@
 // Prompt: Write a function that takes a number n and returns the first n numbers in the Fibonacci sequence.
 // Extension: Modify the function to return the Fibonacci sequence as a comma-separated string.
 
-const clozureAttempt = () => {
+const closure = () => {
   const map = new Map();
   const test = (num) => {
     if (num === 1) {
@@ -23,4 +23,4 @@ const clozureAttempt = () => {
   return test;
 };
 
-export const genFib = clozureAttempt();
+export const genFib = closure();

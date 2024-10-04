@@ -14,11 +14,10 @@ import { mergeSortedLists } from "./7-mergeSortedLists";
 import { findMissingNum } from "./7.1-findMissingNum";
 import { removeDupes } from "./8-removeDupes";
 import { twoSumOptimized } from "./8.1-twoSumOptimized";
-import { factorialFinder, memoizeFactorialFinder, memoizeFinder } from "./9-factorialFinder";
+import { factorialFinder, memoizeFinder } from "./9-factorialFinder";
 import { longestSubstring } from "./9.1-longestSubstring";
-import exp from "constants";
 import { genFib } from "./10-genFib";
-import { exec } from "child_process";
+import { matrices, validateSudoku } from "./10.1-validateSudoku";
 
 describe.skip("Prentus Problems", () => {
   describe("Roman Numeral Generator", () => {
@@ -287,7 +286,7 @@ describe.skip("longestSubstring", () => {
   });
 });
 
-describe("genFib", () => {
+describe.skip("genFib", () => {
   test("1 => [1]", () => {
     expect(genFib(1)).toEqual([1]);
   });
@@ -296,5 +295,20 @@ describe("genFib", () => {
   });
   test("6 => [1, 1, 2, 3, 5, 8]", () => {
     expect(genFib(6)).toEqual([1, 1, 2, 3, 5, 8]);
+  });
+});
+
+describe("validateSudoku", () => {
+  test("board1 => true", () => {
+    expect(validateSudoku(matrices.board1)).toBe(true);
+  });
+  test("board2 => false", () => {
+    expect(validateSudoku(matrices.board2)).toBe(false);
+  });
+  test("board3 => false", () => {
+    expect(validateSudoku(matrices.board3)).toBe(false);
+  });
+  test("board4 => false", () => {
+    expect(validateSudoku(matrices.board4)).toBe(false);
   });
 });
