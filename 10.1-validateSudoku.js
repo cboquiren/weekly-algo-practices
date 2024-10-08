@@ -48,7 +48,49 @@ export const matrices = {
   ],
 };
 
+// export const validateSudoku = (arr) => {
+//   // data here!
+//   // set or map that reflects rows, columns, grids
+
+//   for (let x = 0; x < arr.length; x++) {
+//     const checkRow = new Map();
+//     const checkColumn = new Map();
+//     for (let y = 0; y < arr.length; y++) {
+//       const rowCheck = arr[x][y];
+//       const columnCheck = arr[y][x];
+//       if (rowCheck !== "." && checkRow.has(rowCheck)) {
+//         return false;
+//       }
+//       if (columnCheck !== "." && checkColumn.has(columnCheck)) {
+//         return false;
+//       }
+//       checkRow.set(rowCheck, true);
+//       checkColumn.set(columnCheck, true);
+//     }
+//   }
+
+//   for (let x = 0; x < 9; x += 3) {
+//     for (let y = 0; y < 9; y += 3) {
+//       const checkGrid = new Map();
+//       for (let a = 0; a < 3; a++) {
+//         for (let b = 0; b < 3; b++) {
+//           const gridCheck = arr[x + a][y + b];
+//           if (gridCheck !== "." && checkGrid.has(gridCheck)) {
+//             return false;
+//           }
+//           checkGrid.set(gridCheck, true);
+//         }
+//       }
+//     }
+//   }
+
+//   return true;
+// };
+
 export const validateSudoku = (arr) => {
+  // data here!
+  // set or map that reflects rows, columns, grids
+
   for (let x = 0; x < arr.length; x++) {
     const checkRow = new Map();
     const checkColumn = new Map();
@@ -73,7 +115,6 @@ export const validateSudoku = (arr) => {
         for (let b = 0; b < 3; b++) {
           const gridCheck = arr[x + a][y + b];
           if (gridCheck !== "." && checkGrid.has(gridCheck)) {
-            console.log("hit");
             return false;
           }
           checkGrid.set(gridCheck, true);
